@@ -1,10 +1,8 @@
 const express = require('express');
 
-const app = express();
+const routes = express.Router();
 
-app.use(express.json());
-
-app.post('/', (req, res) => {
+routes.post('/', (req, res) => {
 
     console.log(req.query);
     console.log(req.params);
@@ -16,4 +14,4 @@ app.post('/', (req, res) => {
     });
 });
 
-app.listen(3333);
+module.exports = routes;
